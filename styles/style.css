@@ -2,19 +2,27 @@ body{
     display: flex;
     flex-direction: column;;
     margin: 0px;
+    padding: 0;
 }
 
 .center-page{
-    width: 82vw;
-    background-color: beige;
+    width: 81vw;
+    background-color: rgb(237, 237, 231);
     justify-content: left;
+    padding: 0;
+    margin: 0;
 }
 
+.welcomePage{
+    display: flex;
+    justify-content: right;
+}
 .main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    justify-content: left;
+    width: 100vw;
 }
 .nav-bar{
     display: flex;
@@ -26,8 +34,11 @@ body{
     align-items: center;
     height: 100%;
     width: 18vw;
+    padding: 0;
+    margin: 0;
     padding-top: 3%;
     background-color: white;
+
 }
 .mini-nav-bar{
     display: none;
