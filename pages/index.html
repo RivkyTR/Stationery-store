@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../styles/esty.css">
+    <script  type="module" src="../data/data.js"></script>
 </head>
 
 <body>
@@ -26,8 +27,8 @@
             <div class="mini-nav-bar">
                 <div class="select-box">
                     <select>
-                        <option value="writing-tool">כלי כתיבה</option>
-                        <option value="notebooks">מחברות</option>
+                        <option onclick=writingTools() >כלי כתיבה</option>
+                        <option onclick=notebook()>מחברות</option>
                     </select>
                 </div>
 
@@ -36,8 +37,8 @@
                 </div>
             </div>
             <nav class="links">
-                <a class="link" href="linktopage1">כלי כתיבה</a>
-                <a class="link" href="linktopage2">מחברות</a>
+                <button class="link" id="writingTools">כלי כתיבה</button>
+                <button class="link" id="notebook">מחברות</button>
             </nav>
 
             <nav class="grocery-cart">

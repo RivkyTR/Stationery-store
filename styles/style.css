@@ -7,11 +7,10 @@ body{
 
 .center-page{
     width: 82%;
-    /* background-color: rgb(237, 237, 231); */
+    background-color: rgb(237, 237, 231);
     justify-content: left;
     padding: 0;
     margin: 0;
-    padding-bottom: 70px;
 }
 
 .welcomePage{
@@ -26,7 +25,6 @@ body{
     width: 100%;
     margin: 0px;
     padding: 0;
-    background-color: azure;
 }
 .nav-bar{
     display: flex;
@@ -42,6 +40,7 @@ body{
     margin: 0;
     padding-top: 3%;
     background-color: white;
+
 }
 .mini-nav-bar{
     display: none;
@@ -65,6 +64,8 @@ body{
     font-size: 18px;
     align-content: center;
     padding-top: 10%;
+    background-color: white;
+    border: 0;
 }
 
 .link:hover{
@@ -97,6 +98,51 @@ body{
 .select-box select{
     font-size: 18px;
     border: none;
+    padding: 16px 32px;
+}
+
+select {
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Style the options */
+option {
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+    width: 200px;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Add hover effect */
+select:hover {
+    border-color: #007BFF; /* Change border color on hover */
+}
+
+/* Style the focus state when the dropdown is active */
+select:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.select-box option{
+    padding: 16px 32px;
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
 }
 
 
@@ -104,7 +150,9 @@ body{
     .main{
         flex-direction: column-reverse;
         justify-content: space-between;
+        height: 85vh;
         width: 100vw;
+        background-color: aqua;
     }
     .nav-bar{
         flex-direction: row-reverse;
@@ -116,7 +164,6 @@ body{
         height: 10vh;
         width: 100vw;
         padding-top: 0%;
-        background-color: yellow;
     }
     .links{
         display: none;
@@ -141,5 +188,6 @@ body{
 
     .center-page{
         width: 100vw;
+        height: 120vh;
     }
 }
