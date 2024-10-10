@@ -4,21 +4,30 @@ body{
     margin: 0px;
 }
 
+.center-page{
+    width: 82vw;
+    background-color: beige;
+    justify-content: left;
+}
+
 .main{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 100vh;
+
 }
 .nav-bar{
     display: flex;
     flex-direction: column;
-    /* position: fixed;  */
+    position: fixed; 
+    bottom: 0;
+    right: 0;
     border: 0.1px solid lightgrey;
     align-items: center;
     height: 100%;
     width: 18vw;
     padding-top: 3%;
+    background-color: white;
 }
 .mini-nav-bar{
     display: none;
@@ -84,7 +93,8 @@ body{
     }
     .nav-bar{
         flex-direction: row-reverse;
-        /* position: fixed;  */
+        position: fixed;
+        top: 0;
         border: 0.1px solid lightgrey;
         align-items: center;
         justify-content: space-between;
@@ -114,4 +124,8 @@ body{
         text-align: center;
     }
 
+    .center-page{
+        width: 100vw;
+        height: 120vh;
+    }
 }

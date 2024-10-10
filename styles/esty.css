@@ -1,11 +1,9 @@
 body {
     margin: 0;
 }
-.center-page{
-    width: 82vw;
-}
+
 .background-img{
-    width: 100%;
+    width: 82vw;
     height: 200px;
 }
 
