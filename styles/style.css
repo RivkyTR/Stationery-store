@@ -64,6 +64,8 @@ body{
     font-size: 18px;
     align-content: center;
     padding-top: 10%;
+    background-color: white;
+    border: 0;
 }
 
 .link:hover{
