@@ -1,0 +1,42 @@
+.center-page1 {
+    width: 78vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.personal_details{
+    width: 90%;
+}
+.personal_details input {
+    direction: rtl;
+    width: 100%; /* גורם לשדה לתפוס את כל הרוחב הזמין */
+    box-sizing: border-box; /* כולל padding ו-border בחישוב הרוחב */
+    padding: 10px; /* רווח פנימי בתוך השדה */
+    margin-bottom: 10px; /* מרווח בין השדות */
+}
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    justify-content: space-between;
+    min-height: 400px;
+    width: 100%;
+}
+
+.main {
+    min-height: 800px;
+}
+.orderd_items{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+.create_order{
+    width: 90%;
+}
+.create_order button{
+    border: solid #A0DEFF;
+    background-color: #CAF4FF;
+    border-radius: 10px;
+    padding: 10px;
+}
