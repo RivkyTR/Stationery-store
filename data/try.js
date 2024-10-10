@@ -1,3 +1,3 @@
 import data from "./data.json" with {type:"json"}
 
-console.log(data.craft);
+console.log(data.craft.length);
