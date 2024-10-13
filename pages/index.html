@@ -26,7 +26,7 @@
         <div class="nav-bar">
             <div class="mini-nav-bar">
                 <div class="select-box">
-                    <select>
+                    <select onchange="doSomething()" onfocus="this.selectedIndex = -1;">
                         <option onclick=writingTools() >כלי כתיבה</option>
                         <option onclick=notebook()>מחברות</option>
                     </select>
