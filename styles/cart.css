@@ -26,23 +26,48 @@
     justify-content: space-between;
     min-height: 400px;
     width: 100%;
+    gap: 40px;
+    margin-bottom: 80px
 }
 
 
-.orderd_items{
+.orderd_items {
     width: 90%;
     display: flex;
     justify-content: space-around;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 עמודות */
+    grid-gap: 10px;
+    /* רווח בין פריטים */
+    padding-bottom: 10px;
 }
-.create_order{
+
+.itemKey {
+    min-width: 40%;
+    text-align: center;
+}
+
+.create_order {
     width: 90%;
 }
-.create_order button{
+
+.create_order button,
+.changeAmaunt button {
     border: solid #A0DEFF;
     background-color: #CAF4FF;
     border-radius: 10px;
-    padding: 10px;
+    padding:  10px 15px;
 }
-#orderd_items{
+.changeAmaunt{
+    min-width: 15%;
+}
+
+#orderd_items {
     width: 100%;
+    display: grid;
+
+}
+
+.space {
+    margin: 30px;
 }
