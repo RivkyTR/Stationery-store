@@ -186,7 +186,8 @@ select:focus {
         text-align: center;
     }
 
-    .center-page{
+    .center-page1{
+        display: flex;
         width: 100vw;
         height: 120vh;
     }
