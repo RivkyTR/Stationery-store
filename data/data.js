@@ -1,7 +1,7 @@
 import products from "./data.json" with {type: 'json'}
+var numberProductes = 0;
 
-
-function Notebook(){
+function notebook(){
     console.log("notebook");
     const div = document.getElementById("items");
     div.innerHTML = "";
@@ -53,15 +53,34 @@ function writingTools() {
 window.onload = (event) => {
     writingTools();
     document.getElementById("writingTools").addEventListener("click", writingTools);
-    document.getElementById("notebook").addEventListener("click", Notebook);
+    document.getElementById("notebook").addEventListener("click", notebook);
+    const selectDropdown = document.querySelector('select');
+    selectDropdown.addEventListener('change', function (e) { 
+        const selectedOption = e.target.value;
+        console.log(e.target.value);
+        
+    if (selectedOption === "writingTools") {
+        writingTools();
+    } else {
+        notebook();
+    }
+ });
   };
 
 
 function addToCart(title, price){
     console.log("addToCart");
+    updateNumberOfChosenProducts(1);
+    
     if (localStorage.getItem(title)!==null){
-        localStorage.setItem(title,{"price":price, "num":localStorage.getItem(title).num + 1});
+        localStorage.setItem(title, JSON.stringify({"price": price, "num": JSON.parse(localStorage.getItem(title)).num + 1}));
+        console.log(JSON.parse(localStorage.getItem(title)).num);    
     }
     else
-        localStorage.setItem(title, {"price": price, "num": 1});
+        localStorage.setItem(title, JSON.stringify({"price": price, "num": 1}));
+}
+
+function updateNumberOfChosenProducts(num){
+    numberProductes += num;
+    document.getElementById("numberOfChosenProducts").innerText = numberProductes;
 }

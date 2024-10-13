@@ -26,14 +26,14 @@
         <div class="nav-bar">
             <div class="mini-nav-bar">
                 <div class="select-box">
-                    <select onchange="doSomething()" onfocus="this.selectedIndex = -1;">
-                        <option onclick=writingTools() >כלי כתיבה</option>
-                        <option onclick=notebook()>מחברות</option>
+                    <select id="selected">
+                        <option value=writingTools >כלי כתיבה</option>
+                        <option value=notebook>מחברות</option>
                     </select>
                 </div>
 
                 <div class="logo">
-                    <img src="../images/logo.png">
+                    <img style="width: 100%;" src="../images/logo.png">
                 </div>
             </div>
             <nav class="links">
