@@ -5,7 +5,8 @@ body{
     padding: 0;
 }
 
-.center-page{
+.center-page1{
+    display: flex;
     width: 82%;
     background-color: rgb(237, 237, 231);
     justify-content: left;
