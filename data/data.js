@@ -14,12 +14,16 @@ function notebook(){
         <img class="logoItem" src="..${l.image}">
     </div>
     <div class="priceAndAdd">
-        <button class="add_to_cart" onclick="addToCart(${l.title}, '${l.price}')">add to cart</button>
+        <button class="add_to_cart" id='${l.catalogId}'>add to cart</button>
         <span>${l.price} ש"ח</span>
     </div>`
         div.insertAdjacentHTML("beforeend", html);
+        document.getElementById(`${l.catalogId}`).addEventListener("click", function() {
+            addToCart(l.title, l.price);
+        });
     }
     
+    hideShoppingCart();
 }
 function writingTools() {
     console.log("dfghj");
@@ -48,6 +52,7 @@ function writingTools() {
             addToCart(l.title, l.price);
         });
     }
+    hideShoppingCart();
 }
 
 window.onload = (event) => {
@@ -66,6 +71,10 @@ window.onload = (event) => {
     }
  });
     document.getElementById('shoppingCart').addEventListener("click", shoppingCart);
+    Object.entries(localStorage).forEach(([key, value]) => {
+        numberProductes += JSON.parse(localStorage.getItem(key)).num;
+    });
+    document.getElementById("numberOfChosenProducts").innerText = numberProductes;
   };
 
 
@@ -99,39 +108,47 @@ function updateNumberOfChosenProducts(num){
 
 function shoppingCart(){
     console.log("shoppingCart");
-    
     document.getElementById("center-page1").style.display = "none";
     document.getElementById("center-page2").style.display = "flex";
-    
+    showProducts();
 }
 
+function hideShoppingCart(){
+    console.log("hideShoppingCart");
+    document.getElementById("center-page1").style.display = "block";
+    document.getElementById("center-page2").style.display = "none";
+}
 
-Object.entries(localStorage).forEach(([key, value]) => {
-    let num = JSON.parse(localStorage.getItem(key)).num;
-    let price = JSON.parse(localStorage.getItem(key)).price;
-    const div = document.getElementById("orderd_items");
-    let html = `<div class="orderd_items" id="${key}">
-                        <div class="changeAmaunt">
-                        <button id="${key}-add">+</button>
-                          <span id="${key}-num">${num}</span>  
-                        <button id="${key}-remove">-</button>
-                        </div>
-                        <div> <span>${price}</span></div>
-                         <div> <span>${key}</span> </div>
+function showProducts(){
+    document.getElementById("orderd_items").innerHTML = "";
+    Object.entries(localStorage).forEach(([key, value]) => {
+        let num = JSON.parse(localStorage.getItem(key)).num;
+        let price = JSON.parse(localStorage.getItem(key)).price;
+        const div = document.getElementById("orderd_items");
+        let html = `<div class="orderd_items" id="${key}">
+                            <div class="changeAmaunt">
+                            <button id="${key}-add">+</button>
+                              <span id="${key}-num">${num}</span>  
+                            <button id="${key}-remove">-</button>
+                            </div>
+                            <div> <span>${price}</span></div>
+                             <div> <span>${key}</span> </div>
+    
+                        </div>`
+        div.insertAdjacentHTML("beforeend", html);
+        console.log(key, value);
+        // Then attach the event listener
+        document.getElementById(`${key}-add`).addEventListener("click", function () {
+            addToCart(key, price);
+            updateNum(key);
+        });
+        document.getElementById(`${key}-remove`).addEventListener("click", function () {
+            deleteFromCard(key, price);
+            updateNum(key);
+        });
+    });
+}
 
-                    </div>`
-    div.insertAdjacentHTML("beforeend", html);
-    console.log(key, value);
-    // Then attach the event listener
-    document.getElementById(`${key}-add`).addEventListener("click", function () {
-        addToCart(key, price);
-        updateNum(key);
-    });
-    document.getElementById(`${key}-remove`).addEventListener("click", function () {
-        deleteFromCard(key, price);
-        updateNum(key);
-    });
-});
 function updateNum(key) {
     const div = document.getElementById(`${key}-num`);
     const item = JSON.parse(localStorage.getItem(key));

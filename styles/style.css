@@ -6,7 +6,7 @@ body{
 }
 
 .center-page1{
-    display: flex;
+    display: block;
     width: 82%;
     background-color: rgb(237, 237, 231);
     justify-content: left;

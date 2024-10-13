@@ -1,6 +1,6 @@
 .center-page2 {
+    display: none;
     width: 78vw;
-    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -24,9 +24,7 @@
     width: 100%;
 }
 
-.main {
-    min-height: 800px;
-}
+
 .orderd_items{
     width: 90%;
     display: flex;
