@@ -71,13 +71,24 @@ window.onload = (event) => {
 function addToCart(title, price){
     console.log("addToCart");
     updateNumberOfChosenProducts(1);
-    
+
     if (localStorage.getItem(title)!==null){
         localStorage.setItem(title, JSON.stringify({"price": price, "num": JSON.parse(localStorage.getItem(title)).num + 1}));
         console.log(JSON.parse(localStorage.getItem(title)).num);    
     }
     else
         localStorage.setItem(title, JSON.stringify({"price": price, "num": 1}));
+}
+
+function deleteFromCard(title, price){
+    console.log("deleteFromCard");
+    updateNumberOfChosenProducts(-1);
+    
+    if (JSON.parse(localStorage.getItem(title)).num===1){
+        localStorage.removeItem(title);
+    }
+    else
+    localStorage.setItem(title, JSON.stringify({"price": price, "num": JSON.parse(localStorage.getItem(title)).num - 1}));    
 }
 
 function updateNumberOfChosenProducts(num){
