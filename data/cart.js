@@ -9,7 +9,7 @@ Object.entries(localStorage).forEach(([key, value]) => {
                         <button id="${key}-remove">-</button>
                         </div>
                         <div> <span>${price}</span></div>
-                         <div> <span>${key}</span> </div>
+                         <div class="itemKey"> <span>${key}</span> </div>
 
                     </div>`
     div.insertAdjacentHTML("beforeend", html);
